@@ -262,9 +262,9 @@ if __name__ == "__main__":
 **Solution Reference**
 
 ```
-[print.py](https://github.com/YOUR_USERNAME/REPO_NAME/blob/main/solutions/print.py)
+[print.py](https://github.com/Besir76/PP6/blob/master/solutions/print.py)
 ```
-
+90 Minuten waren hier um
 #### Reflection Questions
 
 1. **Is Python’s print behavior closer to Bash, Assembly, or C? Explain.**
