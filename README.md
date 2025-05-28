@@ -223,9 +223,11 @@ int main(void) {
 
 #### Reflection Questions
 
-1. **Use `objdump -d` on `print_c` to find the assembly instructions corresponding to your `printf` calls.**
-2. **Why is the syntax written differently from GAS assembly? Compare NASM vs. GAS notation.**
-3. **How could you use `fprintf` to write output both to `stdout` and to a file instead? Provide example code.**
+1. **Use `objdump -d` on `print_c` to find the assembly instructions corresponding to your `printf` calls.** Ich habe den Befehl objdump -d print_c ausgeführt. Dabei wurde mir der Assembler-Code des Programms angezeigt. In der Ausgabe konnte ich u. a. den Aufruf von printf erkennen sowie typische Assembler-Befehle wie push, mov oder call. Das zeigt, wie der C-Code intern in Maschinensprache umgesetzt wird
+2. **Why is the syntax written differently from GAS assembly? Compare NASM vs. GAS notation.** Ich habe objdump -d print_s und print_c miteinander verglichen. Der Hauptunterschied liegt darin, dass print_s mit einem String arbeitet (char*), während print_c ein einzelnes Zeichen (char) nutzt. Dadurch unterscheiden sich die Aufrufe von printf leicht, und in print_s wird der Speicher anders vorbereitet, da ein String verarbeitet wird.
+3. **How could you use `fprintf` to write output both to `stdout` and to a file instead? Provide example code.** Beim Ausführen von print_c wird nur ein einzelnes Zeichen ausgegeben, z. B. A.
+Beim Ausführen von print_s hingegen erscheint ein ganzer String, z. B. ABC.
+Der Unterschied liegt also in der Länge der Ausgabe: print_c gibt nur ein Zeichen aus, print_s dagegen mehrere.
 
 ---
 
