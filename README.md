@@ -102,9 +102,12 @@ Place your completed `print.sh` in `solutions/` and commit. Then link it here:
 
 #### Reflection Questions
 
-1. **What is the difference between `printf` and `echo` in Bash?**
-2. **What is the role of `~/.bashrc` in your shell environment?**
-3. **Explain the difference between sourcing (`source ~/.bashrc`) and executing (`./print.sh`).**
+1. **What is the difference between `printf` and `echo` in Bash?** echo ist einfach und schnell, wird aber je nach System unterschiedlich interpretiert.
+printf ist präziser und bietet bessere Kontrolle über Formatierung (z. B. Nachkommastellen, Farben, etc.).
+2. **What is the role of `~/.bashrc` in your shell environment?** Die Datei ~/.bashrc wird bei jedem Start einer neuen Bash-Sitzung geladen.
+Sie enthält Konfigurationen wie Umgebungsvariablen, Aliase und Anpassungen des Prompts.
+3. **Explain the difference between sourcing (`source ~/.bashrc`) and executing (`./print.sh`).** source ~/.bashrc führt das Skript im aktuellen Terminal aus – Änderungen gelten sofort für das Terminal.
+./print.sh startet ein neues Subshell-Terminal, das nach Ausführung wieder verschwindet – Änderungen wirken nur dort.
 
 ---
 
