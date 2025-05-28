@@ -157,14 +157,33 @@ _start:
 **Solution Reference**
 
 ```
-[print.s](https://github.com/YOUR_USERNAME/REPO_NAME/blob/main/solutions/print.s)
+[print.s](https://github.com/Besir76/PP6/blob/master/solutions/simple.s)
 ```
 
 #### Reflection Questions
 
-1. **What is a file descriptor and how does the OS use it?**
-2. **How can you obtain or duplicate a file descriptor for another resource (e.g., a file or socket)?**
-3. **What might happen if you use an invalid file descriptor in a syscall?**
+1. **What is a file descriptor and how does the OS use it?** Ein File Descriptor ist eine kleine, nicht negative Ganzzahl, die vom Betriebssystem vergeben wird, um eine geöffnete Datei, einen Socket oder einen Stream zu identifizieren.
+Typische File Descriptors:
+
+0 = Standard Input (stdin)
+
+1 = Standard Output (stdout)
+
+2 = Standard Error (stderr)
+
+Das Betriebssystem verwendet diese Deskriptoren, um die Verbindung zwischen einer Anwendung und einer Datei oder einem Gerät zu verwalten.
+2. **How can you obtain or duplicate a file descriptor for another resource (e.g., a file or socket)?** dup() / dup2() / dup3() in C → duplizieren einen bestehenden File Descriptor auf einen neuen
+
+fcntl() kann verwendet werden, um Eigenschaften eines Descriptors zu kopieren oder zu ändern
+
+Shells wie Bash nutzen >& zur Umleitung
+3. **What might happen if you use an invalid file descriptor in a syscall?** Wenn du einen ungültigen File Descriptor verwendest (z. B. einen geschlossenen oder nie existenten), führt das meist zu einem Fehler:
+
+Das Systemcall schlägt fehl
+
+errno wird auf EBADF gesetzt (Bad File Descriptor)
+
+Die Funktion gibt -1 zurück
 
 ---
 
