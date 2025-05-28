@@ -172,11 +172,13 @@ Typische File Descriptors:
 2 = Standard Error (stderr)
 
 Das Betriebssystem verwendet diese Deskriptoren, um die Verbindung zwischen einer Anwendung und einer Datei oder einem Gerät zu verwalten.
+
 2. **How can you obtain or duplicate a file descriptor for another resource (e.g., a file or socket)?** dup() / dup2() / dup3() in C → duplizieren einen bestehenden File Descriptor auf einen neuen
 
 fcntl() kann verwendet werden, um Eigenschaften eines Descriptors zu kopieren oder zu ändern
 
 Shells wie Bash nutzen >& zur Umleitung
+
 3. **What might happen if you use an invalid file descriptor in a syscall?** Wenn du einen ungültigen File Descriptor verwendest (z. B. einen geschlossenen oder nie existenten), führt das meist zu einem Fehler:
 
 Das Systemcall schlägt fehl
